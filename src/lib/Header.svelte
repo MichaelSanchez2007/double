@@ -51,5 +51,10 @@
 		margin: 20px auto;
 		font-size: 25px;
 		text-align: center;
+		transition: 0.1s;
+	}
+	a:hover {
+		color: orange;
+		font-size: 20px;
 	}
 </style>

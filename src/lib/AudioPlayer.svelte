@@ -38,14 +38,14 @@
 	</div>
 </div>
 
-<img src="/Logo.png" />
+<img src="/Logo.png" alt="" />
 
 <style>
 	img {
 		position: absolute;
 		margin: auto;
 		top: 400px;
-		right: 930px;
+		right: 880px;
 		bottom: 0;
 		left: 0;
 		border-radius: 25px;
@@ -67,6 +67,7 @@
 		color: white;
 		padding: 20px;
 		animation: 10s infinite alternate hover;
+		cursor: default;
 	}
 	p {
 		font-size: 21px;
@@ -74,7 +75,7 @@
 	.Button {
 		margin: 10px -10px auto;
 		display: flex;
-		width: 200px;
+		width: 250px;
 	}
 	@keyframes hover {
 		0% {
