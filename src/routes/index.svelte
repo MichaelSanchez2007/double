@@ -17,7 +17,16 @@
 {/each}
 
 <div class="title">
-	<h1>Discord.</h1>
+	<h1>
+		<span> D</span>
+		<span> i</span>
+		<span> s</span>
+		<span> c</span>
+		<span> o</span>
+		<span> r</span>
+		<span> d</span>
+		<span>.</span>
+	</h1>
 
 	<hr />
 
@@ -44,6 +53,12 @@
 <div class="background" />
 
 <style>
+	span {
+		transition: 0.2s;
+	}
+	span:hover {
+		color: rgb(255, 255, 255);
+	}
 	#star {
 		position: absolute;
 		margin: auto;
@@ -55,6 +70,11 @@
 		box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.57);
 		border-radius: 25px;
 		text-align: center;
+		animation: 10s infinite rainbow;
+		transition: 0.5s;
+	}
+	#star:hover {
+		transform: scale(1.2);
 	}
 	.containerA {
 		background: rgb(0, 0, 0);
@@ -71,13 +91,12 @@
 		animation: 10s infinite alternate hover;
 		color: white;
 		padding: 20px;
-	}
-	.container:hover {
-		transform: scale(1.1);
+		cursor: default;
 	}
 	h2 {
 		padding: 20px;
 		text-align: center;
+		cursor: default;
 	}
 	hr {
 		padding: 1px;
@@ -89,15 +108,18 @@
 		margin: auto;
 		right: 0;
 		left: 0;
-		color: white;
+		color: rgb(114, 191, 221);
 		text-align: center;
 	}
 	p {
 		font-size: 20px;
+		cursor: default;
 	}
 	h1 {
 		text-align: center;
 		position: relative;
+		cursor: default;
+		color: rgb(114, 191, 221);
 	}
 	.background {
 		position: absolute;
@@ -120,6 +142,14 @@
 		}
 		100% {
 			transform: translateY(-3%);
+		}
+	}
+	@keyframes rainbow {
+		0% {
+			filter: hue-rotate(0deg);
+		}
+		100% {
+			filter: hue-rotate(360deg);
 		}
 	}
 </style>
