@@ -57,7 +57,7 @@
 		transition: 0.2s;
 	}
 	span:hover {
-		color: rgb(255, 255, 255);
+		color: rgb(114, 191, 221);
 	}
 	#star {
 		position: absolute;
@@ -108,7 +108,7 @@
 		margin: auto;
 		right: 0;
 		left: 0;
-		color: rgb(114, 191, 221);
+		color: rgb(255, 255, 255);
 		text-align: center;
 	}
 	p {
@@ -119,7 +119,7 @@
 		text-align: center;
 		position: relative;
 		cursor: default;
-		color: rgb(114, 191, 221);
+		color: rgb(255, 255, 255);
 	}
 	.background {
 		position: absolute;

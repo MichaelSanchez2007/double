@@ -38,14 +38,14 @@
 		height: 2px;
 	}
 	h2 {
-		color: rgb(114, 191, 221);
+		color: rgb(255, 255, 255);
 		padding: 10px;
 		text-align: center;
 		margin: 0;
 	}
 	a {
 		text-decoration: none;
-		color: rgb(114, 191, 221);
+		color: rgb(255, 255, 255);
 		padding: 15px;
 		font-family: 'Questrial', sans-serif;
 		margin: 20px auto;
@@ -54,7 +54,7 @@
 		transition: 0.1s;
 	}
 	a:hover {
-		color: rgb(255, 255, 255);
+		color: rgb(114, 191, 221);
 		font-size: 20px;
 	}
 </style>
