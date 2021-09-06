@@ -36,16 +36,16 @@
 			<track kind="captions" />
 		</audio>
 	</div>
-</div>
 
-<img src="/Logo.png" alt="" />
+	<img src="/Logo.png" alt="" />
+</div>
 
 <style>
 	img {
 		position: absolute;
 		margin: auto;
 		top: 400px;
-		right: 880px;
+		right: -350px;
 		bottom: 0;
 		left: 0;
 		border-radius: 25px;
@@ -57,11 +57,7 @@
 		width: 300px;
 		height: 400px;
 		border-radius: 35px;
-		margin: auto;
-		position: absolute;
-		top: 0;
-		right: 1400px;
-		bottom: -80px;
+		position: relative;
 		box-shadow: -1px 1px 42px 7px rgba(0, 0, 0, 0.57);
 		transition: 0.5s;
 		color: white;
@@ -73,6 +69,7 @@
 		font-size: 21px;
 	}
 	.Button {
+		position: relative;
 		margin: 10px -10px auto;
 		display: flex;
 		width: 250px;

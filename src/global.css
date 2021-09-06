@@ -5,4 +5,7 @@ body {
 	font-family: 'Questrial', sans-serif;
 	margin: 0;
 	padding: 0;
+	background-color: #1e1f22;
+	overflow-x: hidden;
+	height: 100%;
 }

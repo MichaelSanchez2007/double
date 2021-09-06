@@ -27,11 +27,14 @@
 		text-align: center;
 	}
 	header {
+		position: absolute;
+		top: 0;
 		background: black;
 		width: 100px;
-		height: 969px;
+		height: 100vh;
 		background: linear-gradient(to bottom, #000 00%, transparent 200%);
 		margin: 0;
+		max-width: 15vw;
 	}
 	hr {
 		width: 50px;
@@ -42,14 +45,15 @@
 		padding: 10px;
 		text-align: center;
 		margin: 0;
+		font-size: min(3.5vw, 25px);
 	}
 	a {
 		text-decoration: none;
 		color: rgb(255, 255, 255);
-		padding: 15px;
+		padding: min(2vw, 15px);
 		font-family: 'Questrial', sans-serif;
 		margin: 20px auto;
-		font-size: 25px;
+		font-size: min(3.5vw, 23px);
 		text-align: center;
 		transition: 0.1s;
 	}

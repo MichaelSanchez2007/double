@@ -1,8 +1,8 @@
 <script>
+	import AudioPlayer from '$lib/AudioPlayer.svelte';
+	import { fly } from 'svelte/transition';
 	import Header from '$lib/Header.svelte';
 	import StarA from '$lib/StarA.svelte';
-	import AudioPlayer, { stopAll } from '$lib/AudioPlayer.svelte';
-	import { fly, slide } from 'svelte/transition';
 	import { onMount } from 'svelte';
 	let audioTracks = ['/Paper.mp3'];
 
@@ -12,51 +12,67 @@
 	});
 </script>
 
-{#each audioTracks as src}
-	<AudioPlayer {src} />
-{/each}
+<div class="background" />
 
 <div class="title">
-	<h1>
-		<span> D</span>
-		<span> i</span>
-		<span> s</span>
-		<span> c</span>
-		<span> o</span>
-		<span> r</span>
-		<span> d</span>
-		<span>.</span>
-	</h1>
+	{#if mounted}
+		<h1 class="discord">
+			{#each 'Discord.' as letter, i}
+				<div class="letter" in:fly={{ y: 10, delay: 150 * i }}>{letter}</div>
+			{/each}
+		</h1>
 
-	<hr />
+		<hr />
 
-	<div class="subtitle">
-		<p>
-			A great place to chat with friends, make calls, "Whats for homework" and meeting new people!
-		</p>
+		<div class="subtitle">
+			<p in:fly={{ y: 10, delay: 1250, duration: 1000 }}>
+				A great place to chat with friends, make calls, "Whats for homework" and meeting new people!
+			</p>
+		</div>
+	{/if}
+</div>
+
+<section>
+	<div class="container-b">
+		{#each audioTracks as src}
+			<AudioPlayer {src} />
+		{/each}
 	</div>
-</div>
 
-<div class="containerA">
-	<h2>Review From Former Discord User</h2>
-	<hr />
-	<p>
-		Holy moly guacamoly is this thing the most beautiful thing ive discovered! I have met new
-		clients, new friends and have had so much fun using and navigating Discord! Discord is very new
-		user friendly and even provides a tutorial on how to use it!
-	</p>
-	<div id="star"><StarA /></div>
-</div>
+	<div class="container-a">
+		<h2>Review From Former Discord User</h2>
+		<hr />
+		<p>
+			Holy moly guacamoly is this thing the most beautiful thing ive discovered! I have met new
+			clients, new friends and have had so much fun using and navigating Discord! Discord is very
+			new user friendly and even provides a tutorial on how to use it!
+		</p>
+		<div id="star"><StarA /></div>
+	</div>
+</section>
 
 <Header />
 
-<div class="background" />
-
 <style>
-	span {
+	section {
+		display: flex;
+		justify-content: space-between;
+		max-width: min(80vw, 1500px);
+		margin: auto;
+		align-items: center;
+		position: relative;
+		flex-wrap: wrap;
+		gap: 2rem;
+	}
+	@media (max-width: 875px) {
+		section {
+			justify-content: center;
+		}
+	}
+	.letter {
 		transition: 0.2s;
 	}
-	span:hover {
+	.letter:hover {
 		color: rgb(114, 191, 221);
 	}
 	#star {
@@ -76,16 +92,13 @@
 	#star:hover {
 		transform: scale(1.2);
 	}
-	.containerA {
+	.container-a {
 		background: rgb(0, 0, 0);
-		width: 300px;
+		max-width: 300px;
 		height: 400px;
 		border-radius: 35px;
-		margin: auto;
-		position: absolute;
-		top: 0;
-		right: 120px;
-		bottom: -80px;
+		/* margin: auto; */
+		position: relative;
 		box-shadow: -1px 1px 42px 7px rgba(0, 0, 0, 0.57);
 		transition: 0.5s;
 		animation: 10s infinite alternate hover;
@@ -102,9 +115,10 @@
 		padding: 1px;
 	}
 	.title {
+		padding-top: 1rem;
 		width: 300px;
-		height: 10px;
-		position: absolute;
+		height: 162px;
+		position: relative;
 		margin: auto;
 		right: 0;
 		left: 0;
@@ -120,6 +134,10 @@
 		position: relative;
 		cursor: default;
 		color: rgb(255, 255, 255);
+		display: flex;
+		justify-content: center;
+		letter-spacing: 5px;
+		margin: 0;
 	}
 	.background {
 		position: absolute;
@@ -129,7 +147,8 @@
 		background-image: url('/Discord.jpg');
 		background-repeat: no-repeat;
 		background-size: cover;
-		z-index: -1;
+		background-position: center;
+		/* z-index: 0; */
 	}
 	@media only screen and (max-width: 1000vw) {
 		.background {
